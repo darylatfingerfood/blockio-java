@@ -198,6 +198,7 @@ public class BlockIO {
         String addrsParamString = "";
         String amountsParamString = "";
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.US); // This will force '.' as decimal separator
+        nf.setMaximumFractionDigits(8);
         for (Map.Entry<String, Double> entry: addrsAndAmounts.entrySet()) {
             addrsParamString += entry.getKey() + ",";
             amountsParamString +=  nf.format(entry.getValue()) + ",";
